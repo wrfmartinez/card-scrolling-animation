@@ -6,7 +6,7 @@
 
 body {
   font-family: "Open-Sans", Helvetica, sans-serif;
-  background-color: #353531;
+  background-color: #181817;
 }
 
 /* NAVIGATION */
@@ -39,9 +39,27 @@ nav button {
 nav button:hover {
   transition: 0.3s;
   cursor: pointer;
-  color: #FFF;
+  color: #F0F0F0;
   background-color: #3F88C5;
   border-color: #FFF;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+#header-description {
+  font-size: 2em;
+  color: #F0F0F0;
+  height: 10%;
+}
+
+#second-description-color {
+  color: #3785ec;
 }
 
 /* CARDS */
@@ -49,7 +67,6 @@ nav button:hover {
   display: flex;
   justify-content: center;
   align-items: end;
-  height: 100dvh;
 }
 
 #cards-container {
