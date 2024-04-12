@@ -7,3 +7,20 @@
 body {
   font-family: "Open-Sans", Helvetica, sans-serif;
 }
+
+.card-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 400px;
+  border: 1px solid lightgray;
+  border-radius: 40px;
+}
+
+.card {
+  height: 580px;
+  width: 380px;
+  border: 1px solid lightgray;
+  border-radius: 40px;
+}
