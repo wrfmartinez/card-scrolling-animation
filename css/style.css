@@ -82,6 +82,7 @@ header {
   align-items: center;
   height: 33.5rem;
   width: 21rem;
+  background-color: #F0F0F0;
   border: 1px solid lightgray;
   border-radius: 40px;
 }
