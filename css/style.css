@@ -30,18 +30,16 @@ nav {
 nav button {
   font-weight: 600;
   padding: 10px 20px;
-  color: #34373b;
-  background-color: transparent;
-  border: 1px solid gray;
+  color: #F0F0F0;
+  background-color: #181818;
+  border: none;
   border-radius: 40px;
 }
 
 nav button:hover {
   transition: 0.3s;
   cursor: pointer;
-  color: #F0F0F0;
-  background-color: #3F88C5;
-  border-color: #FFF;
+  background-color: #1c83d8;
 }
 
 /* HEADER */
