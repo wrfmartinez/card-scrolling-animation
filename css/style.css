@@ -81,7 +81,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 33.5rem;
-  width: 21rem;
+  width: 17.1rem;
   background-color: #F0F0F0;
   border: 1px solid lightgray;
   border-radius: 40px;
@@ -89,7 +89,7 @@ header {
 
 .card-content {
   height: 97%;
-  width: 95%;
+  width: 96%;
   border: 1px solid lightgray;
   border-radius: 40px;
 }
@@ -101,4 +101,25 @@ header {
 #card-middle {
   position: fixed;
   z-index: 10;
+}
+
+#card-left .card-content {
+  background: #0d0d0d url(../assets/insight-app.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#card-right .card-content {
+  background: #0d0d0d url(../assets/home-app.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#card-middle .card-content {
+  background: #0d0d0d url(../assets/onboarding-app.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: top 5px center;
 }
