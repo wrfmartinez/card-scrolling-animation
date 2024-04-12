@@ -57,7 +57,7 @@ header {
   text-align: center;
   color: #F0F0F0;
   height: 10%;
-  margin: 150px 0 50px 0;
+  margin: 150px 0 -150px 0;
 }
 
 #second-description-color {
@@ -148,7 +148,7 @@ header {
 
 /* ANIMATIONS */
 .zoom-in {
-  transition: 1s;
+  transition: 2s;
   transform: scale(100);
 }
 
@@ -161,7 +161,7 @@ header {
   opacity: 0;
 }
 
-.slide-up {
+#header-description.slide-up {
   transition: 1s;
-  transform: translateY(40px);
+  margin: 150px 0 50px 0;
 }
