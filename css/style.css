@@ -128,3 +128,34 @@ header {
   background-repeat: no-repeat;
   background-position: top 5px center;
 }
+
+/* EFFECTS */
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  background-color: #F0F0F0;
+}
+
+.circle {
+  background: #181817;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.hide {
+  display: none;
+}
+
+/* ANIMATIONS */
+.zoom-in {
+  transition: 1s;
+  transform: scale(100);
+}
+
+.slide-up {
+  transition: 1s;
+  transform: translateY(40px);
+}
