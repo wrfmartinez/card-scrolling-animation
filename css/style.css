@@ -73,7 +73,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.blur-container {
+  display: flex;
   gap: 150px;
+  filter: blur(5px);
 }
 
 .card-border {
