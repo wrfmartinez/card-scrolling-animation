@@ -85,15 +85,15 @@ header {
   align-items: center;
   height: 37.5rem;
   width: 21.1rem;
-  background-color: #F0F0F0;
-  border: 1px solid lightgray;
+  background-color: #131313;
+  border: 1px solid #595959;
   border-radius: 40px;
 }
 
 .card-content {
   height: 97%;
   width: 96%;
-  border: 1px solid lightgray;
+  border: 1px solid #595959;
   border-radius: 40px;
 }
 
