@@ -3,7 +3,6 @@ const circleElement = document.querySelector("div.circle");
 const navElement = document.querySelector("nav");
 const headerElement = document.querySelector("header");
 const headerDescriptionElement = document.getElementById("header-description");
-console.log(headerDescriptionElement);
 
 const hidePageContent = () => {
   navElement.classList.add("hide");
