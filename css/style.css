@@ -69,12 +69,7 @@ header {
 #cards-container {
   display: flex;
   justify-content: center;
-}
-
-.blur-container {
-  display: flex;
-  gap: 150px;
-  filter: blur(5px);
+  gap: 100px;
 }
 
 .card-border {
@@ -82,27 +77,30 @@ header {
   justify-content: center;
   align-items: center;
   height: 37.5rem;
-  width: 21.1rem;
+  width: 19.5rem;
   background-color: #131313;
   border: 1px solid #595959;
   border-radius: 40px;
 }
 
 .card-content {
-  height: 97%;
-  width: 96%;
+  height: 96%;
+  width: 93%;
   border: 1px solid #595959;
   border-radius: 40px;
 }
 
 #card-left, #card-right {
-  padding-top: 170px;
+  filter: blur(0.28rem);
+  opacity: 0.7;
+  padding-top: 165px;
+  padding-bottom: 50px;
 }
 
 #card-middle {
   position: absolute;
   padding-top: 70px;
-  z-index: 10;
+  z-index: 1;
 }
 
 #card-left .card-content {
@@ -164,4 +162,30 @@ header {
 #header-description.slide-up {
   transition: 1s;
   margin: 150px 0 50px 0;
+}
+
+.switchCard {
+  transition: 1s;
+}
+
+#card-middle.switchMiddleCard {
+  padding-top: 165px;
+  padding-bottom: 50px;
+  z-index: 0;
+  transform: translateX(-205px);
+  filter: blur(0.28rem);
+}
+
+#card-left.switchLeftCard {
+  transform: translateX(405px);
+  z-index: 1;
+}
+
+#card-right.switchRightCard {
+  filter: blur(0);
+  opacity: 1;
+  padding-top: 70px;
+  padding-bottom: 0;
+  z-index: 1;
+  transform: translateX(-205px);
 }
