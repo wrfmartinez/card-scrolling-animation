@@ -4,9 +4,22 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 200%;
+}
+
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   font-family: "Open-Sans", Helvetica, sans-serif;
   background-color: #181817;
+}
+
+#main-components {
+  width: 100dvw;
+  position: fixed;
 }
 
 /* NAVIGATION */
@@ -130,6 +143,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 100dvh;
+  width: 100dvw;
   background-color: #F0F0F0;
 }
 
@@ -146,7 +160,7 @@ header {
 
 /* ANIMATIONS */
 .zoom-in {
-  transition: 2s;
+  transition: 3s;
   transform: scale(100);
 }
 

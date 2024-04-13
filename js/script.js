@@ -32,15 +32,31 @@ const restorePageContent = () => {
 }
 
 const switchCard = () => {
-  const rightStyle = getComputedStyle(rightCardToSwitch);
-  const leftStyle = getComputedStyle(leftCardToSwitch);
-  const rightCardZIndexValue = rightStyle.zIndex;
-  const leftCardZIndexValue = leftStyle.zIndex;
+  // !!! MIGHT NOT NEED THESE !!!
+  // const rightStyle = getComputedStyle(rightCardToSwitch);
+  // const leftStyle = getComputedStyle(leftCardToSwitch);
+  // const rightCardZIndexValue = rightStyle.zIndex;
+  // const leftCardZIndexValue = leftStyle.zIndex;
 
-  // TODO: THESE CONDITIONS SHOULD FIRE ONLY AT CERTAIN POSITION ON THE WINDOW HEIGHT *NOT* ON EVERY SCROLL EVENT
+  // // Reliably obtains the full document height
+  // // Sourced from: javascript.info/size-and-scroll-window
+  // let scrollHeight = Math.max(
+  //   document.body.scrollHeight, document.documentElement.scrollHeight,
+  //   document.body.offsetHeight, document.documentElement.offsetHeight,
+  //   document.body.clientHeight, document.documentElement.clientHeight
+  // );
 
-  // IF RIGHT CARD IS THE PRIMARY CARD THEN SHIFT CARDS
-  if (rightCardZIndexValue === "1") {
+  console.log(window.scrollY);
+
+  // TODO: CARDS SHOULD SHIFT ONLY AT CERTAIN POSITIONS ON THE WINDOW HEIGHT *NOT* ON EVERY SCROLL EVENT
+
+  if (window.scrollY > 1 && window.scrollY < 200) {
+    // FIRST SHIFT OF CARDS WHERE THE MIDDLE CARD IS THE PRIMARY CARD
+    middleCardToSwitch.classList.add("switchMiddleCard");
+    leftCardToSwitch.classList.add("switchLeftCard");
+    rightCardToSwitch.classList.add("switchRightCard");
+  } else if (window.scrollY > 200 && window.scrollY < 400) {
+    // SHIFTS LEFT CARD AS THE PRIMARY CARD
     middleCardToSwitch.style.transform = "translateX(205px)";
 
     leftCardToSwitch.style.filter = "blur(0)";
@@ -55,14 +71,13 @@ const switchCard = () => {
     rightCardToSwitch.style.zIndex = 0;
     rightCardToSwitch.style.transform = "translateX(-405px)";
     rightCardToSwitch.style.paddingTop = "165px";
-  }
-
-  // IF LEFT CARD IS THE PRIMARY CARD THEN SET THE ORIGINAL STATE OF CARDS
-  if (leftCardZIndexValue === "1") {
+  } else if (window.scrollY > 400) {
+    // SHIFTS CARDS TO IT'S INITIAL STATE
     middleCardToSwitch.style.zIndex = "1";
     middleCardToSwitch.style.transform = "translateX(0)";
     middleCardToSwitch.style.filter = "blur(0)";
-    middleCardToSwitch.style.paddingTop = 0;
+    middleCardToSwitch.style.paddingTop = "70px";
+    middleCardToSwitch.style.paddingBottom = 0;
 
     leftCardToSwitch.style.filter = "blur(0.28rem)";
     leftCardToSwitch.style.opacity = "0.7";
@@ -77,12 +92,8 @@ const switchCard = () => {
     rightCardToSwitch.style.transform = "translateX(0)";
     rightCardToSwitch.style.paddingTop = "165px";
     rightCardToSwitch.style.paddingBottom = "50px";
+    window.removeEventListener("scroll", switchCard);
   }
-
-  // FIRST SHIFT OF CARDS WHERE THE MIDDLE CARD IS THE PRIMARY CARD
-  middleCardToSwitch.classList.add("switchMiddleCard");
-  leftCardToSwitch.classList.add("switchLeftCard");
-  rightCardToSwitch.classList.add("switchRightCard");
 }
 
 // Will remove main components on the page first on DOM content load
@@ -92,5 +103,4 @@ window.addEventListener("DOMContentLoaded", zoomInEffect);
 setTimeout(() => {
   restorePageContent();
 }, 500);
-
 window.addEventListener("scroll", switchCard);
