@@ -36,23 +36,18 @@ const restorePageContent = () => {
   }, 50)
 }
 
+const changeText = (text) => {
+  headerDescriptionElement.classList.add("slide-up");
+  headerDescriptionText.innerHTML = text;
+}
+
+const joinBgCards = () => {
+  headerDescriptionElement.style.opacity = "1";
+  headerDescriptionElement.style.margin = "150px 0 -150px 0";
+  mainComponentsElement.style.position = "unset";
+}
+
 const switchCard = () => {
-  // !!! MIGHT NOT NEED THESE !!!
-  // const rightStyle = getComputedStyle(rightCardToSwitch);
-  // const leftStyle = getComputedStyle(leftCardToSwitch);
-  // const rightCardZIndexValue = rightStyle.zIndex;
-  // const leftCardZIndexValue = leftStyle.zIndex;
-
-  // // Reliably obtains the full document height
-  // // Sourced from: javascript.info/size-and-scroll-window
-  // let scrollHeight = Math.max(
-  //   document.body.scrollHeight, document.documentElement.scrollHeight,
-  //   document.body.offsetHeight, document.documentElement.offsetHeight,
-  //   document.body.clientHeight, document.documentElement.clientHeight
-  // );
-
-  console.log(window.scrollY);
-  
   headerDescriptionElement.classList.remove("slide-up");
 
   if (window.scrollY > 1 && window.scrollY < 200) {
@@ -60,8 +55,7 @@ const switchCard = () => {
     middleCardToSwitch.classList.add("switchMiddleCard");
     leftCardToSwitch.classList.add("switchLeftCard");
     rightCardToSwitch.classList.add("switchRightCard");
-    headerDescriptionElement.classList.add("slide-up");
-    headerDescriptionText.innerHTML = 'A dashboard <span id="second-description-color">fully tailored and optimized for you</span>';
+    changeText('A dashboard <span id="second-description-color">fully tailored and optimized for you</span>');
   } else if (window.scrollY > 200 && window.scrollY < 400) {
     // SHIFTS LEFT CARD AS THE PRIMARY CARD
     middleCardToSwitch.style.transform = "translateX(205px)";
@@ -78,8 +72,7 @@ const switchCard = () => {
     rightCardToSwitch.style.zIndex = 0;
     rightCardToSwitch.style.transform = "translateX(-405px)";
     rightCardToSwitch.style.paddingTop = "165px";
-    headerDescriptionElement.classList.add("slide-up");
-    headerDescriptionText.innerHTML = 'Crush your fitness goals <span id="second-description-color">with our metrics tracker</span>';
+    changeText('Crush your fitness goals <span id="second-description-color">with our metrics tracker</span>');
   } else if (window.scrollY > 400 && window.scrollY < 600) {
     // SHIFTS CARDS TO IT'S INITIAL STATE
     middleCardToSwitch.style.zIndex = "1";
@@ -101,16 +94,13 @@ const switchCard = () => {
     rightCardToSwitch.style.transform = "translateX(0)";
     rightCardToSwitch.style.paddingTop = "165px";
     rightCardToSwitch.style.paddingBottom = "50px";
-    headerDescriptionElement.classList.add("slide-up");
-    headerDescriptionText.innerHTML = 'Training a <br><span id="second-description-color">new generation of athletes</span>';
+    changeText('Training a <br><span id="second-description-color">new generation of athletes</span>');
   } else if (window.scrollY > 500) {
     leftCardToSwitch.style.opacity = "0";
     rightCardToSwitch.style.transform = "translateX(-205px)";
     leftCardToSwitch.style.transform = "translateX(205px)";
     rightCardToSwitch.style.opacity = "0"
-    headerDescriptionElement.style.opacity = "1";
-    headerDescriptionElement.style.margin = "150px 0 -150px 0";
-    mainComponentsElement.style.position = "unset";
+    joinBgCards();
   }
 }
 
