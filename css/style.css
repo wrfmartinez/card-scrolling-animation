@@ -143,19 +143,26 @@ header {
   padding: 10px 250px;
 }
 
+#info-circle video {
+  width: 100%;
+  border-radius: 20px;
+}
+
 #info-circle div {
   font-size: 1.8em;
-  padding: 15px 700px 0px 80px;
   height: 700px;
-  color: #F0F0F0;
+  color: #efefef;
+  text-shadow: #000 1px 1px 30px;
   border-radius: 80px;
-  background: url("https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  background-size: cover;
+}
+
+#info-circle div p {
+  padding-bottom: 50px;
 }
 
 @media (min-width: 1200px) {
   #info-circle {
-    padding: 10px 100px;
+    padding: 10px 150px;
   }
 
   #info-circle div {
