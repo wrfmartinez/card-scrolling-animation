@@ -10,7 +10,9 @@ This personal project is inspired by the [PayPal First Look](https://www.paypal.
 - JavaScript
 
 ### Attributions
-[Figma Fitness App Mockup Designs](https://www.figma.com/community/file/1096744662320428503/gym-fitness-app-ui-kit)  
+[Figma Fitness App Mockup Designs](https://www.figma.com/community/file/1096744662320428503/gym-fitness-app-ui-kit) 
+
+[Pexels Stock Video](https://www.pexels.com/video/a-man-running-on-the-beach-shore-3125907/)
 
 [JavaScript.info Lesson on Size and Scroll Window](https://javascript.info/size-and-scroll-window)  
 This resource helped greatly in building out the switchCards function.  
