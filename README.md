@@ -1,6 +1,7 @@
 # Card Scolling Animation
 
 ### Description
+A hypothetical fitness single webpage with a mobile app card-scrolling animation.
 This personal project is inspired by the [PayPal First Look](https://www.paypal.com/us/whats-new/first-look) webpage.
 
 ### Tools
