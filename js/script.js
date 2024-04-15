@@ -3,13 +3,17 @@ const circleElement = document.querySelector("div.circle");
 const navElement = document.querySelector("nav");
 const headerElement = document.querySelector("header");
 const headerDescriptionElement = document.getElementById("header-description");
+const headerDescriptionText = headerDescriptionElement.querySelector("h1");
 const leftCardToSwitch = document.querySelector("#card-left.switchCard");
 const middleCardToSwitch = document.querySelector("#card-middle.switchCard");
 const rightCardToSwitch = document.querySelector("#card-right.switchCard");
+const mainComponentsElement = document.getElementById("main-components");
+const mainElement = document.querySelector("main");
 
 const hidePageContent = () => {
   navElement.classList.add("hide");
   headerElement.classList.add("hide");
+  mainElement.classList.add("hide");
 }
 
 const zoomInEffect = () => {
@@ -24,6 +28,7 @@ const restorePageContent = () => {
 
   navElement.classList.remove("hide");
   headerElement.classList.remove("hide");
+  mainElement.classList.remove("hide");
 
   setTimeout(() => {
     navElement.classList.replace("transparent", "fade-in");
@@ -47,14 +52,16 @@ const switchCard = () => {
   // );
 
   console.log(window.scrollY);
-
-  // TODO: CARDS SHOULD SHIFT ONLY AT CERTAIN POSITIONS ON THE WINDOW HEIGHT *NOT* ON EVERY SCROLL EVENT
+  
+  headerDescriptionElement.classList.remove("slide-up");
 
   if (window.scrollY > 1 && window.scrollY < 200) {
     // FIRST SHIFT OF CARDS WHERE THE MIDDLE CARD IS THE PRIMARY CARD
     middleCardToSwitch.classList.add("switchMiddleCard");
     leftCardToSwitch.classList.add("switchLeftCard");
     rightCardToSwitch.classList.add("switchRightCard");
+    headerDescriptionElement.classList.add("slide-up");
+    headerDescriptionText.innerHTML = 'A dashboard <span id="second-description-color">fully tailored and optimized for you</span>';
   } else if (window.scrollY > 200 && window.scrollY < 400) {
     // SHIFTS LEFT CARD AS THE PRIMARY CARD
     middleCardToSwitch.style.transform = "translateX(205px)";
@@ -71,7 +78,9 @@ const switchCard = () => {
     rightCardToSwitch.style.zIndex = 0;
     rightCardToSwitch.style.transform = "translateX(-405px)";
     rightCardToSwitch.style.paddingTop = "165px";
-  } else if (window.scrollY > 400) {
+    headerDescriptionElement.classList.add("slide-up");
+    headerDescriptionText.innerHTML = 'Crush your fitness goals <span id="second-description-color">with our metrics tracker</span>';
+  } else if (window.scrollY > 400 && window.scrollY < 600) {
     // SHIFTS CARDS TO IT'S INITIAL STATE
     middleCardToSwitch.style.zIndex = "1";
     middleCardToSwitch.style.transform = "translateX(0)";
@@ -92,7 +101,16 @@ const switchCard = () => {
     rightCardToSwitch.style.transform = "translateX(0)";
     rightCardToSwitch.style.paddingTop = "165px";
     rightCardToSwitch.style.paddingBottom = "50px";
-    window.removeEventListener("scroll", switchCard);
+    headerDescriptionElement.classList.add("slide-up");
+    headerDescriptionText.innerHTML = 'Training a <br><span id="second-description-color">new generation of athletes</span>';
+  } else if (window.scrollY > 500) {
+    leftCardToSwitch.style.opacity = "0";
+    rightCardToSwitch.style.transform = "translateX(-205px)";
+    leftCardToSwitch.style.transform = "translateX(205px)";
+    rightCardToSwitch.style.opacity = "0"
+    headerDescriptionElement.style.opacity = "1";
+    headerDescriptionElement.style.margin = "150px 0 -150px 0";
+    mainComponentsElement.style.position = "unset";
   }
 }
 
