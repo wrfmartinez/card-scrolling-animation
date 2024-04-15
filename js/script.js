@@ -47,6 +47,15 @@ const joinBgCards = () => {
   mainComponentsElement.style.position = "unset";
 }
 
+const positionCard = (element, translate, blur, opacity, paddingTop, paddingBottom, zIndex) => {
+  element.style.zIndex = zIndex;
+  element.style.transform = translate;
+  element.style.filter = blur;
+  element.style.paddingTop = paddingTop;
+  element.style.paddingBottom = paddingBottom;
+  element.style.opacity = opacity;
+}
+
 const switchCard = () => {
   headerDescriptionElement.classList.remove("slide-up");
 
@@ -58,48 +67,19 @@ const switchCard = () => {
     changeText('A dashboard <span id="second-description-color">fully tailored and optimized for you</span>');
   } else if (window.scrollY > 200 && window.scrollY < 400) {
     // SHIFTS LEFT CARD AS THE PRIMARY CARD
-    middleCardToSwitch.style.transform = "translateX(205px)";
-
-    leftCardToSwitch.style.filter = "blur(0)";
-    leftCardToSwitch.style.opacity = "1";
-    leftCardToSwitch.style.paddingTop = "70px";
-    leftCardToSwitch.style.paddingBottom = "0";
-    leftCardToSwitch.style.zIndex = "1";
-    leftCardToSwitch.style.transform = "translateX(205px)";
-
-    rightCardToSwitch.style.opacity = "0.7"
-    rightCardToSwitch.style.filter = "blur(0.28rem)"
-    rightCardToSwitch.style.zIndex = 0;
-    rightCardToSwitch.style.transform = "translateX(-405px)";
-    rightCardToSwitch.style.paddingTop = "165px";
+    positionCard(middleCardToSwitch, "translateX(205px)");
+    positionCard(leftCardToSwitch, "translateX(205px)", "blur(0)", "1", "70px", "0", "1");
+    positionCard(rightCardToSwitch, "translateX(-405px)", "blur(0.28rem)", "0.7", "165px", "", "0");
     changeText('Crush your fitness goals <span id="second-description-color">with our metrics tracker</span>');
   } else if (window.scrollY > 400 && window.scrollY < 600) {
     // SHIFTS CARDS TO IT'S INITIAL STATE
-    middleCardToSwitch.style.zIndex = "1";
-    middleCardToSwitch.style.transform = "translateX(0)";
-    middleCardToSwitch.style.filter = "blur(0)";
-    middleCardToSwitch.style.paddingTop = "70px";
-    middleCardToSwitch.style.paddingBottom = 0;
-
-    leftCardToSwitch.style.filter = "blur(0.28rem)";
-    leftCardToSwitch.style.opacity = "0.7";
-    leftCardToSwitch.style.paddingTop = "165px";
-    leftCardToSwitch.style.paddingBottom = "50px";
-    leftCardToSwitch.style.zIndex = "0";
-    leftCardToSwitch.style.transform = "translateX(0)";
-
-    rightCardToSwitch.style.opacity = "0.7"
-    rightCardToSwitch.style.filter = "blur(0.28rem)"
-    rightCardToSwitch.style.zIndex = 0;
-    rightCardToSwitch.style.transform = "translateX(0)";
-    rightCardToSwitch.style.paddingTop = "165px";
-    rightCardToSwitch.style.paddingBottom = "50px";
+    positionCard(middleCardToSwitch, "translateX(0)", "blur(0)", "", "70px", "0", "1");
+    positionCard(leftCardToSwitch, "translateX(0)", "blur(0.28rem)", "0.7", "165px", "50px", "0");
+    positionCard(rightCardToSwitch, "translateX(0)", "blur(0.28rem)", "0.7", "165px", "50px", "0");
     changeText('Training a <br><span id="second-description-color">new generation of athletes</span>');
   } else if (window.scrollY > 500) {
-    leftCardToSwitch.style.opacity = "0";
-    rightCardToSwitch.style.transform = "translateX(-205px)";
-    leftCardToSwitch.style.transform = "translateX(205px)";
-    rightCardToSwitch.style.opacity = "0"
+    positionCard(leftCardToSwitch, "translateX(205px)", "", "0");
+    positionCard(rightCardToSwitch, "translateX(-205px)", "", "0");
     joinBgCards();
   }
 }
