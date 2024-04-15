@@ -179,18 +179,24 @@ header {
   margin: 0;
  }
 
- #header-description {
+ #header-description.slide-up {
   font-size: 1.7em;
   text-align: center;
   color: #F0F0F0;
   height: 10%;
   opacity: 0;
-  margin: 150px 0 -150px 0;
+  padding: 0px 0 70px 0;
 }
 
  nav {
   margin: 10px 20px;
  }
+}
+
+@media (max-width: 400px) {
+  #header-description.slide-up {
+    padding: 70px 0;
+  }
 }
 
 /* EFFECTS */
