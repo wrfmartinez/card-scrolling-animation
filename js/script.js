@@ -20,7 +20,7 @@ const zoomInEffect = () => {
   // Waits 0.2 seconds before initiating zoom-in animation to avoid starting animation too quickly on page load
   setTimeout(() => {
     circleElement.classList.add("zoom-in");
-  }, 10)
+  }, 30)
 }
 
 const restorePageContent = () => {
