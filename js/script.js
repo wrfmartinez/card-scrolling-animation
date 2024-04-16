@@ -46,7 +46,7 @@ const changeText = (text) => {
 }
 
 const joinBgCards = () => {
-  headerDescriptionElement.style.opacity = "1";
+  headerDescriptionElement.classList.remove("slide-up");
   mainComponentsElement.style.position = "unset";
 }
 
