@@ -70,12 +70,12 @@ const switchCard = () => {
     // FIRST SHIFT OF CARDS WHERE THE MIDDLE CARD IS THE PRIMARY CARD
     positionCard(middleCardToSwitch, "translateX(-205px)", "blur(0.28rem)", "0.7", "100px", "0", "0");
     positionCard(leftCardToSwitch, "translateX(405px)", "", "", "", "", "1");
-    positionCard(rightCardToSwitch, "translateX(-205px)", "blur(0)", "1", "0", "0", "1");
+    positionCard(rightCardToSwitch, "translateX(-180px)", "blur(0)", "1", "0", "0", "1");
     changeText('A dashboard <span id="second-description-color">fully tailored and optimized for you</span>');
   } else if (window.scrollY > 300 && window.scrollY < 500) {
     // SHIFTS LEFT CARD AS THE PRIMARY CARD
     positionCard(middleCardToSwitch, "translateX(205px)", "blur(0.28rem", "0.7", "100px", "50px", "0");
-    positionCard(leftCardToSwitch, "translateX(205px)", "blur(0)", "1", "0", "0", "1");
+    positionCard(leftCardToSwitch, "translateX(185px)", "blur(0)", "1", "0", "0", "1");
     positionCard(rightCardToSwitch, "translateX(-405px)", "blur(0.28rem)", "0.7", "100px", "", "0");
     changeText('Crush your fitness goals <span id="second-description-color">with our metrics tracker</span>');
   } else if (window.scrollY > 500 && window.scrollY < 600) {
