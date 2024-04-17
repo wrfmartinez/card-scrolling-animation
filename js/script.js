@@ -62,27 +62,27 @@ const positionCard = (element, translate, blur, opacity, paddingTop, paddingBott
 const switchCard = () => {
   if (window.scrollY > 1 && window.scrollY < 200) {
     mainComponentsElement.style.position = "fixed";
-    positionCard(middleCardToSwitch, "translateX(0)", "blur(0)", "", "70px", "0", "1");
-    positionCard(leftCardToSwitch, "translateX(0)", "blur(0.28rem)", "0.7", "165px", "50px", "0");
-    positionCard(rightCardToSwitch, "translateX(0)", "blur(0.28rem)", "0.7", "165px", "50px", "0");
+    positionCard(middleCardToSwitch, "translateX(0)", "blur(0)", "", "0", "0", "1");
+    positionCard(leftCardToSwitch, "translateX(0)", "blur(0.28rem)", "0.7", "100px", "0", "0");
+    positionCard(rightCardToSwitch, "translateX(0)", "blur(0.28rem)", "0.7", "100px", "0", "0");
     changeText('Training a <br><span id="second-description-color">new generation of athletes</span>');
   } else if (window.scrollY > 200 && window.scrollY < 300) {
     // FIRST SHIFT OF CARDS WHERE THE MIDDLE CARD IS THE PRIMARY CARD
-    positionCard(middleCardToSwitch, "translateX(-205px)", "blur(0.28rem)", "50px", "165px", "0.7", "0");
+    positionCard(middleCardToSwitch, "translateX(-205px)", "blur(0.28rem)", "0.7", "100px", "0", "0");
     positionCard(leftCardToSwitch, "translateX(405px)", "", "", "", "", "1");
-    positionCard(rightCardToSwitch, "translateX(-205px)", "blur(0)", "1", "70px", "0", "1");
+    positionCard(rightCardToSwitch, "translateX(-205px)", "blur(0)", "1", "0", "0", "1");
     changeText('A dashboard <span id="second-description-color">fully tailored and optimized for you</span>');
   } else if (window.scrollY > 300 && window.scrollY < 500) {
     // SHIFTS LEFT CARD AS THE PRIMARY CARD
-    positionCard(middleCardToSwitch, "translateX(205px)", "blur(0.28rem", "0.7", "165px", "50px", "0");
-    positionCard(leftCardToSwitch, "translateX(205px)", "blur(0)", "1", "70px", "0", "1");
-    positionCard(rightCardToSwitch, "translateX(-405px)", "blur(0.28rem)", "0.7", "165px", "", "0");
+    positionCard(middleCardToSwitch, "translateX(205px)", "blur(0.28rem", "0.7", "100px", "50px", "0");
+    positionCard(leftCardToSwitch, "translateX(205px)", "blur(0)", "1", "0", "0", "1");
+    positionCard(rightCardToSwitch, "translateX(-405px)", "blur(0.28rem)", "0.7", "100px", "", "0");
     changeText('Crush your fitness goals <span id="second-description-color">with our metrics tracker</span>');
   } else if (window.scrollY > 500 && window.scrollY < 600) {
     // SHIFTS CARDS TO IT'S INITIAL STATE
-    positionCard(middleCardToSwitch, "translateX(0)", "blur(0)", "", "70px", "0", "1");
-    positionCard(leftCardToSwitch, "translateX(0)", "blur(0.28rem)", "0.7", "165px", "50px", "0");
-    positionCard(rightCardToSwitch, "translateX(0)", "blur(0.28rem)", "0.7", "165px", "50px", "0");
+    positionCard(middleCardToSwitch, "translateX(0)", "blur(0)", "", "0", "0", "1");
+    positionCard(leftCardToSwitch, "translateX(0)", "blur(0.28rem)", "0.7", "100px", "50px", "0");
+    positionCard(rightCardToSwitch, "translateX(0)", "blur(0.28rem)", "0.7", "100px", "50px", "0");
     changeText('Training a <br><span id="second-description-color">new generation of athletes</span>');
   } else if (window.scrollY > 600) {
     positionCard(leftCardToSwitch, "translateX(205px)", "", "0");

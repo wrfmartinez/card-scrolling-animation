@@ -67,11 +67,11 @@ header {
 }
 
 #header-description {
-  font-size: 2.3em;
+  font-size: 2.1em;
   text-align: center;
   color: #F0F0F0;
   height: 10%;
-  padding: 50px 20px 0 20px;
+  padding: 20px 20px 0 20px;
   opacity: 0;
   transform: translateY(100px);
 }
@@ -92,8 +92,8 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 37.5rem;
-  width: 19.5rem;
+  height: 29.5rem;
+  width: 16.5rem;
   background-color: #131313;
   border: 1px solid #595959;
   border-radius: 40px;
@@ -109,13 +109,12 @@ header {
 #card-left, #card-right {
   filter: blur(0.28rem);
   opacity: 0.7;
-  padding-top: 165px;
+  padding-top: 100px;
   padding-bottom: 50px;
 }
 
 #card-middle {
   position: absolute;
-  padding-top: 70px;
   z-index: 1;
 }
 
@@ -180,6 +179,11 @@ header {
     text-align: center;
     font-size: 1.5em;
     padding: 30px;
+
+    .card-border {
+      height: 29.5rem;
+      width: 16.5rem;
+    }
  }
 
  body {
